@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>
+    <table th:border="1">
+        <tr>
+            <th>Модель</th>
+            <th>Цвет</th>
+            <th>Год выпуска</th>
+        </tr>
+        <tr th:each="msg : ${messages}">
+            <td th:utext="${msg.model}">...</td>
+            <td th:utext="${msg.color}">...</td>
+            <td th:utext="${msg.year}">...</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
