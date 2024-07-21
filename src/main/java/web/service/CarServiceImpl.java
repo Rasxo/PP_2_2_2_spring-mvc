@@ -22,11 +22,6 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public List<Car> getCars() {
-        return cars.stream().toList();
-    }
-
-    @Override
     public List<Car> getCars(int count) {
         if (count <= 0) {
             return List.of();

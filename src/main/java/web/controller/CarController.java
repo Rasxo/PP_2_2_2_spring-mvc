@@ -20,16 +20,8 @@ public class CarController {
     }
 
     @GetMapping()
-    public String printCars(@RequestParam(value = "count", required = false) String value, ModelMap model) {
-        if (value == null) {
-            model.addAttribute("messages", carDao.getCars());
-        } else if (!(value.matches("[0-9]+"))) {
-            model.addAttribute("messages", "Некорректный URL!");
-            return "cars/error";
-        } else {
-            int intValue = Integer.parseInt(value);
-            model.addAttribute("messages", carDao.getCars(intValue));
-        }
+    public String printCars(@RequestParam(value = "count", required = false, defaultValue = "5") int value, ModelMap model) {
+        model.addAttribute("messages", carDao.getCars(value));
         return "cars/cars";
     }
 }
