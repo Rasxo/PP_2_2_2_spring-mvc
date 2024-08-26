@@ -15,8 +15,8 @@ public class CarController {
     private final CarService carService;
 
     @Autowired
-    public CarController(CarService carDao) {
-        this.carService = carDao;
+    public CarController(CarService carService) {
+        this.carService = carService;
     }
 
     @GetMapping()
